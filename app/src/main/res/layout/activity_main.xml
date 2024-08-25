@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/cadastroTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadastro"
+            android:textSize="35sp"
+            android:gravity="center_horizontal"
+            android:background="#045D85"
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/nomeCompletoEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome completo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/cadastroTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <EditText
+            android:id="@+id/foneEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Telefone"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/nomeCompletoEt"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+        <EditText
+            android:id="@+id/emailEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="email"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/foneEt"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <CheckBox
+            android:id="@+id/listaEmailsCb"
+            android:layout_width="264dp"
+            android:layout_height="56dp"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:text="Ingressar na lista de e-mails?"
+            app:layout_constraintHorizontal_bias="0.027"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailEt" />
+
+        <TextView
+            android:id="@+id/sexoTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Sexo"
+            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/listaEmailsCb" />
+
+        <RadioGroup
+            android:id="@+id/sexoRg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sexoTv">
+
+            <RadioButton
+                android:id="@+id/masculinoRb"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Masculino" />
+
+            <RadioButton
+                android:id="@+id/femininoRb"
+                android:layout_width="161dp"
+                android:layout_height="wrap_content"
+                android:text="Feminino" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/cidadeEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Cidade"
+            android:inputType="textEmailAddress"
+            android:padding="5dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sexoRg" />
+
+        <TextView
+            android:id="@+id/UfTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="UF"
+            app:layout_constraintHorizontal_bias="0.126"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cidadeEt" />
+
+        <Spinner
+            android:id="@+id/estadoSp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/estado"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/UfTv" />
+
+
+        <Button
+            android:id="@+id/salveBt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salvar"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:onClick="save"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/estadoSp" />
+
+        <Button
+            android:id="@+id/limparBt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Limpar"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:onClick="clear"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/salveBt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
